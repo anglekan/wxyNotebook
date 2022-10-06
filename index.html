@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>wxyNotebook</title>
+    <link rel="stylesheet" href="./css/sidebar.css">
+    <link rel="stylesheet" href="./css/textbox.css">
+    <link rel="stylesheet" href="./css/topic.css">
+    <link rel="stylesheet" href="./css/right.css">
+  </head>
+  <body>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">语文</a>
+      <a href="#">数学</a>
+      <a href="#">英语</a>
+      <a href="#">物理</a>
+    </div>
+    <div id="main"> 
+      <h2>这是小王的笔记本</h2>
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+      <table>
+        <tbody id="textbox">
+        <tr id="text">         
+          <td id="td1" onclick="key(this)">
+            <textarea id="text-input" rows="3" cols="2" onkeydown="convert(this)" onclick="autoTextarea(this)"></textarea>
+            <div id="img">
+              <img src="./img/上移.png" id="up" onclick="up(this)">
+              <img src="./img/下移.png" id="down" onclick="down(this)">
+              <img src="./img/newly.png" id="upadd" onclick="upadd(this)">
+              <img src="./img/新增.png" id="lowadd" onclick="lowadd(this)">
+              <img src="./img/删除.png" id="delete" onclick="deleted(this)">
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+    
+    <div id="right">
+      <!-- <botton>主题模式</botton> -->
+    <div id="nav">
+      <ul>
+        <li>
+          <a href="#" class="theme-1 click" onclick="setTheme('theme-1');setBtnSize(this)"></a>
+        </li>
+        <li>
+          <a href="#" class="theme-2" onclick="setTheme('theme-2');setBtnSize(this)"></a>
+        </li>
+        <li>
+          <a href="#" class="theme-3" onclick="setTheme('theme-3');setBtnSize(this)"></a>
+        </li>
+        <li>
+          <a href="#" class="theme-4" onclick="setTheme('theme-4');setBtnSize(this)"></a>
+        </li>
+        <li>
+          <a href="#" class="theme-5" onclick="setTheme('theme-5');setBtnSize(this)"></a>
+        </li>
+      </ul>
+    </div>
+    <br>
+      <h2>属性</h2>
+      <p>编号:<div id="num"></div></p>
+      <p>作者:王欣怡</p>
+      <p>编号从0开始</p>
+      <p>在文本框中输入markdown内容，按空格键进入HTML预览模式，双击又回到文本编辑模式</p>
+      <p>点击左上角的不同按钮，可以切换不同颜色的主题模式</p>
+      <p>单击后，每个文本框可以根据内容自动调增高度(最少三行，超过则自动增加高度)</p>
+      <p>点击open出现左侧导航边栏，点击×可隐藏</p>
+      <p>单元格左上角的五个按钮，具有上移、下移、在上方新建、在下方新建、删除的功能</p>
+    </div>
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/showdown/2.0.3/showdown.min.js"></script>
+    <script src="./js/sidebar.js"></script>
+    <script src="./js/topic.js"></script>
+    <script src="./js/mark_html.js"></script>
+    <script src="./js/auto.js"></script>
+    <script src="./js/changed.js"></script>
+  </body>
+</html>
